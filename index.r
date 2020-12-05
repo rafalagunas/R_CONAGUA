@@ -59,7 +59,7 @@ params <- c("city_ID", "valid_date_utc", "wind_direction","relative_humidity","c
 
 result <- searchSpecificColumns(params)
 
-#Nombres de todas las ciudades del estado.
+#All names of cities from a given state
 #result$city_name
 
 benito_juarez <- df %>% 
