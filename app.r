@@ -28,9 +28,19 @@ library(threejs)
 
 
 datos = read.csv("QuintanaRoo.csv", sep=",", stringsAsFactors = F) # Colocarla como variable global
-
+#head(datos)
 
 ciudades = unique(datos$city_name)
+
+cozumel = datos %>% 
+  filter(city_name == "Cozumel")
+
+bacalar = datos %>% 
+  filter(city_name == "Bacalar")
+
+print(cozumel)
+
+
 
 ui <- dashboardPage(skin = "purple",
                     
