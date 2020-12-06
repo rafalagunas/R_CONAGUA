@@ -15,7 +15,7 @@ getData <- function (pageSize,state){
     return(dat)
 }
 
-data <- getData(50,"ROO")
+data <- getData(565192,"YUC")
 
 df <- as.data.frame(data)
 #head(df)
@@ -53,6 +53,8 @@ df <- df %>% select((params))
 #str(df)
 return(df)
 }
+
+write.csv(df,"Yucatán.csv", row.names = FALSE)
 
 #Parámetros de búsqueda.
 params <- c("city_ID", "valid_date_utc", "wind_direction","relative_humidity","city_name")
