@@ -29,6 +29,7 @@ library(threejs)
 
 datos = read.csv("QuintanaRoo.csv", sep=",", stringsAsFactors = F) # Colocarla como variable global
 
+
 ciudades = unique(datos$city_name)
 
 ui <- dashboardPage(skin = "purple",
@@ -98,29 +99,6 @@ ui <- dashboardPage(skin = "purple",
 
 server <- function(input, output) {
 
-    output$vv <- renderText({ 
-    "You have selected this"
-  })
-library(httr)
-library(jsonlite)
-library(dplyr)
-res <- GET("https://api.datos.gob.mx/v1/condiciones-atmosfericas")
-dat <- fromJSON(rawToChar(res$content))
-
-getData <- function (pageSize,state){
-    URL <- sprintf("https://api.datos.gob.mx/v1/condiciones-atmosfericas?pageSize=%s&stateabbr=%s",pageSize,state)
-    res <- GET(URL,verbose())
-    dat <- fromJSON(rawToChar(res$content))
-    return(dat)
-}
-
-data <- getData(50,"ROO")
-
-df <- as.data.frame(data)
-head(df)
-
-
-  
   
 }
 
